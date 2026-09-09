@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/EnterpriseAgenticRag.Api/EnterpriseAgenticRag.Api.csproj" />
+    <Project Path="src/EnterpriseAgenticRag.Application/EnterpriseAgenticRag.Application.csproj" />
+    <Project Path="src/EnterpriseAgenticRag.Contracts/EnterpriseAgenticRag.Contracts.csproj" />
+    <Project Path="src/EnterpriseAgenticRag.Domain/EnterpriseAgenticRag.Domain.csproj" />
+    <Project Path="src/EnterpriseAgenticRag.Infrastructure/EnterpriseAgenticRag.Infrastructure.csproj" />
+    <Project Path="src/EnterpriseAgenticRag.Ingestion.Worker/EnterpriseAgenticRag.Ingestion.Worker.csproj" />
+    <Project Path="src/EnterpriseAgenticRag.ServiceDefaults/EnterpriseAgenticRag.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/EnterpriseAgenticRag.ArchitectureTests/EnterpriseAgenticRag.ArchitectureTests.csproj" />
+    <Project Path="tests/EnterpriseAgenticRag.UnitTests/EnterpriseAgenticRag.UnitTests.csproj" />
+  </Folder>
+</Solution>

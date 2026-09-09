@@ -1,0 +1,16 @@
+name: enterprise-agentic-rag
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: enterprise-rag-sql
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD:-Your_strong_password123!}"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+    volumes:
+      - enterprise-rag-sql-data:/var/opt/mssql
+
+volumes:
+  enterprise-rag-sql-data:

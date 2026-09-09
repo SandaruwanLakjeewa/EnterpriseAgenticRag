@@ -1,0 +1,7 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\EnterpriseAgenticRag.Contracts\EnterpriseAgenticRag.Contracts.csproj" />
+    <ProjectReference Include="..\EnterpriseAgenticRag.Domain\EnterpriseAgenticRag.Domain.csproj" />
+  </ItemGroup>
+</Project>

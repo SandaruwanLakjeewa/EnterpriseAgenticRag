@@ -1,0 +1,38 @@
+@host = http://localhost:5227
+@seedKnowledgeBaseId = 33333333-3333-3333-3333-333333333333
+@conversationId = replace-after-create
+@jobId = replace-after-submit
+
+GET {{host}}/health
+
+### Submit a text document to the seeded knowledge base
+POST {{host}}/api/v1/knowledge-bases/{{seedKnowledgeBaseId}}/documents
+Content-Type: application/json
+
+{
+  "title": "Contoso Remote Work Policy",
+  "content": "Tier 1 employees work in the office Tuesday, Wednesday, and Thursday. The home-office hardware budget is 500 USD every two years. Remote access requires the corporate VPN and a company-issued device.",
+  "sourceUri": "https://contoso.example/policies/remote-work",
+  "isPublicWithinTenant": true,
+  "allowedGroupIds": []
+}
+
+### Poll the returned ingestion job
+GET {{host}}/api/v1/ingestion-jobs/{{jobId}}
+
+### Create conversation
+POST {{host}}/api/v1/conversations
+Content-Type: application/json
+
+{
+  "knowledgeBaseId": "{{seedKnowledgeBaseId}}",
+  "title": "Remote work questions"
+}
+
+### Ask a grounded question after the worker indexed the document
+POST {{host}}/api/v1/conversations/{{conversationId}}/messages
+Content-Type: application/json
+
+{
+  "message": "Which days do Tier 1 employees work in the office and what is the hardware budget?"
+}
